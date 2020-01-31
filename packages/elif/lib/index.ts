@@ -5,8 +5,4 @@ class Elif {
     }
 }
 
-const check = new Elif(10);
-
-console.log(check.a)
-
 export default Elif;

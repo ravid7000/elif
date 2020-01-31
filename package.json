@@ -1,5 +1,5 @@
 {
-  "name": "elif",
+  "name": "elifjs",
   "version": "0.0.1",
   "description": "Micro graphql engine",
   "main": "index.js",
@@ -22,8 +22,10 @@
   },
   "homepage": "https://github.com/ravid7000/elif#readme",
   "devDependencies": {
+    "@types/jest": "^25.1.1",
     "@types/node": "^13.5.3",
     "lerna": "^3.20.2",
+    "ts-jest": "^25.1.0",
     "tslint": "^6.0.0",
     "typescript": "^3.7.5"
   }

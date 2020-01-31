@@ -27,16 +27,20 @@
   },
   "scripts": {
     "start": "ts-node ./lib/index.ts",
+    "test": "jest",
     "build": "npm run clean && npm run compile",
     "clean": "rm -rf ./dist && rm -rf tsconfig.tsbuildinfo",
     "compile": "tsc -b tsconfig.json",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run test"
   },
   "bugs": {
     "url": "https://github.com/ravid7000/elif/issues"
   },
   "devDependencies": {
+    "@types/jest": "^25.1.1",
     "@types/node": "^13.5.3",
+    "jest": "^25.1.0",
+    "ts-jest": "^25.1.0",
     "ts-node": "^8.6.2",
     "typescript": "^3.7.5"
   }
