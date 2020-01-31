@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.build.json",
+  "compilerOptions": {
+    "baseUrl": "./packages",
+    "paths": {
+      "@elifjs/elif": ["elif/lib"]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
