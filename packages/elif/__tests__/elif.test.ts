@@ -1,8 +1,26 @@
-import Elif from '../lib';
+interface ElifTypes {
+  convert: (GQuery: string) => string;
+}
 
-describe('@elifjs/elif', () => {
-    it('should pass test', () => {
-        const check = new Elif(10);
-        expect(check.a).toStrictEqual(10);
+const Elif = (config: object): ElifTypes => {
+  return {
+    convert: (GQuery: string): string => {
+      return "DBQuery";
+    },
+  };
+};
+
+it("should pass test", () => {
+    const elif = Elif({
+      database: {
+        user: "",
+        password: "",
+        type: "postgres",
+      },
     });
+    elif.convert(`
+      query {
+
+      }
+    `);
 });

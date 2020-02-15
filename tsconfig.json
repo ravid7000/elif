@@ -3,7 +3,7 @@
   "compilerOptions": {
     "baseUrl": "./packages",
     "paths": {
-      "@elifjs/elif": ["elif/lib"]
+      "@elifjs/elif": ["elif/src"]
     }
   },
   "exclude": [
