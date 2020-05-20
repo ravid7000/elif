@@ -16,7 +16,7 @@ Use script
 ```html
 <script src="https://raw.githubusercontent.com/ravid7000/elif/master/array/isArray/script.js"></script>
 <script>
-  const input = [1, 2]
+  var input = [1, 2]
   if (isArray(input)) {
     // ...
   }
