@@ -24,6 +24,14 @@ const getReadmeContent = (dirName: string, dirPath: string) =>
     '```\n',
   ].join('')
 
+const getTestsContent = (dirName: string) =>
+  [
+    `import { assertEquals } from 'https://deno.land/std/testing/asserts.ts'\n`,
+    `import { ${dirName} } from './mod.ts'\n\n`,
+    `Deno.test('${dirName}: tests', () => {\n`,
+    '}',
+  ].join('')
+
 const encoder = new TextEncoder()
 
 const dirPath = Deno.args[0]
@@ -36,6 +44,9 @@ for await (let file of fileToGenerate) {
   let content = ''
   if (file === 'README.md') {
     content = getReadmeContent(dirName, dirPath)
+  }
+  if (file === 'mod.test.ts') {
+    content = getTestsContent(dirName)
   }
   await Deno.writeFile(dirPath + '/' + file, encoder.encode(content))
 }

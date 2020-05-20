@@ -1,7 +1,4 @@
-import {
-  assertEquals,
-  assertThrows,
-} from 'https://deno.land/std/testing/asserts.ts'
+import { assertEquals } from 'https://deno.land/std/testing/asserts.ts'
 import { arrayTop } from './mod.ts'
 
 Deno.test('arrayTop: tests', () => {
