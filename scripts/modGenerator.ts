@@ -5,7 +5,13 @@ function getDirName(path: string) {
   return path.substr(path.lastIndexOf('/') + 1)
 }
 
-const fileToGenerate = ['mod.ts', 'mod.test.ts', 'script.js', 'README.md']
+const fileToGenerate = [
+  'mod.ts',
+  'mod.test.ts',
+  'mod.js',
+  'mod.test.js',
+  'README.md',
+]
 
 const getReadmeContent = (dirName: string, dirPath: string) =>
   [
@@ -29,12 +35,18 @@ const getTestsContent = (dirName: string) =>
     `import { assertEquals } from 'https://deno.land/std/testing/asserts.ts'\n`,
     `import { ${dirName} } from './mod.ts'\n\n`,
     `Deno.test('${dirName}: tests', () => {\n`,
-    '}',
+    '})',
   ].join('')
+
+const tsIgnoreCheck = '// @ts-nocheck'
 
 const encoder = new TextEncoder()
 
 const dirPath = Deno.args[0]
+
+if (!dirPath) {
+  throw new Error('Dir path/name is required')
+}
 
 const dirName = getDirName(dirPath)
 
@@ -47,6 +59,9 @@ for await (let file of fileToGenerate) {
   }
   if (file === 'mod.test.ts') {
     content = getTestsContent(dirName)
+  }
+  if (file === 'mod.js' || file === 'mod.test.js') {
+    content = tsIgnoreCheck
   }
   await Deno.writeFile(dirPath + '/' + file, encoder.encode(content))
 }

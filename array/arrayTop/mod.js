@@ -1,6 +1,6 @@
-function isArray(input) {
-  return Object.prototype.toString.call(input) === '[object Array]'
-}
+// @ts-nocheck
+
+import { isArray } from '../isArray/mod.js'
 
 function arrayTop(input, limit) {
   if (!arguments[1]) {
@@ -11,3 +11,5 @@ function arrayTop(input, limit) {
   }
   return []
 }
+
+export { arrayTop }

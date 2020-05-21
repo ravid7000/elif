@@ -1,28 +1,23 @@
-/**
- * Iterate all elements of array
- */
+// @ts-nocheck
 
-import { isArray } from '../isArray/mod.ts'
+import { isArray } from '../isArray/mod.js'
 
-function arrayLoop<T extends Array<unknown>>(
-  input: T,
-  callback?: (elm: T[0], index: number) => T[0] | undefined
-): T {
+function arrayLoop(input, callback) {
   if (isArray(input)) {
     if (typeof callback !== 'function') {
       return input
     }
     let len = input.length,
       i = 0,
-      newArr: unknown[] = []
+      newArr = []
     while (i < len) {
       const result = callback(input[i], i)
       newArr[i] = result !== undefined ? result : input[i]
       i += 1
     }
-    return newArr as T
+    return newArr
   }
-  return [] as any
+  return []
 }
 
 export { arrayLoop }
