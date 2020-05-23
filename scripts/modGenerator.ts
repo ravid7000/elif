@@ -26,7 +26,7 @@ const getReadmeContent = (dirName: string, dirPath: string) =>
     '```html\n',
     `<script src="https://raw.githubusercontent.com/ravid7000/elif/master/${dirPath}/script.js"></script>\n`,
     '<script>\n',
-    '</script>',
+    '</script>\n',
     '```\n',
   ].join('')
 
