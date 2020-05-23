@@ -7,3 +7,4 @@ import '../array/arrayFill/mod.test.js'
 
 // object
 import '../object/isObject/mod.test.js'
+import '../object/isPlainObject/mod.test.js'

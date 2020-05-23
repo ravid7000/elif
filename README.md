@@ -6,3 +6,8 @@ Javascript and Typescript Utilities
 - arrayBottom
 - arrayTop
 - arrayLoop
+
+### Object
+
+- isObject
+- isPlainObject

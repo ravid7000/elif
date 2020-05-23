@@ -7,3 +7,4 @@ import '../array/arrayFill/mod.test.ts'
 
 // object
 import '../object/isObject/mod.test.ts'
+import '../object/isPlainObject/mod.test.ts'
